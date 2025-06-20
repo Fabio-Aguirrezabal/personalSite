@@ -6,14 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/Style.css">
+
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 16pt;
+                font-size: 16pt;
+            }
+
+            .navbar {
+                position: fixed;
+                margin: 0;
+                padding: 0;
+                box-shadow: -3pt 2pt 4pt 0pt rgba(0,0,0,.5);
+
+                & .menu {
+                    padding: 6pt 6pt 4pt 6pt;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10pt;
+                    list-style: none;               
+
+                    & li::before {
+                        position: fixed;
+                        transform: translateY(16pt);
+                        content: "";
+                        width: 4ch;
+                        height: 2pt;
+                        background-color: #B57E9E;
+                        border-radius: 2pt;
+                    }
+
+                    li:hover{
+                        transform: scale(1.1);
+                        box-shadow: 0 0 4pt 0pt rgba(0,0,0,.5);
+                    }
+
+                    & li:active {
+                        border-bottom: solid 2pt #010101;
+                    }
+
+                    & button {
+                        border: 0;
+                        background-color: transparent;
+
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+
+                       & .drop-down {
+                        position: fixed;
+                        display: flex;
+                        flex-direction: column;
+                        background-color: white;
+                        text-align: left;
+                        box-shadow: 1pt 1pt 4pt 1pt rgba(0,0,0,.5);
+                    border-radius: 2pt;
+                    padding: 2pt;
+                    }
+                }
+
+
+
+            }
+
+
+            body{
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(to bottom right, #eaeff8, #96abad);
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+
 </head>
 
 <body>
-<nav class="navbar">
-    <ul class="main-menu">
-        <li><a href="curriculum-vitae.html">About Me</a></li>
-    </ul>
-</nav>
+
+
+
+    <nav class="navbar">
+    
+
+        <ul class="menu nav-menu">
+            <li><button id="home-btn" role="button">Home</button></li>
+            <li><button id="resume-btn" role="button"><a href="curriculum-vitae.html">About Me</a></button></li>
+            <li><button id="project-btn">Projects</button>
+                <ul class="menu drop-down">
+                    <li><a href="#">Blogg-me</a></li>
+                    <li><a href="#"></a>clock</li>
+                    <li><a href="#"></a>remind-me</li>
+                    <li><a href="#">OpenSiad</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
 </body>
 
